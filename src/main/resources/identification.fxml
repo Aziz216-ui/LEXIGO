@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="20" style="-fx-background-color: #0A3353;" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.melocode.avocat.IdentificationController">
+    
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Titre -->
+    <Label text="IDENTIFICATION ADMINISTRATEUR" 
+           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;">
+        <VBox.margin>
+            <Insets bottom="30"/>
+        </VBox.margin>
+    </Label>
+
+    <!-- Formulaire -->
+    <VBox alignment="CENTER" spacing="15" style="-fx-background-color: rgba(255,255,255,0.1); -fx-padding: 20; -fx-background-radius: 10;">
+        
+        <!-- Champ Identifiant -->
+        <TextField fx:id="adminUsernameField"
+                  promptText="Identifiant administrateur"
+                  style="-fx-background-color: white; -fx-font-size: 14px; -fx-padding: 8; -fx-min-width: 250; -fx-background-radius: 5;"/>
+
+        <!-- Message d'erreur -->
+        <Label fx:id="errorLabel" 
+               style="-fx-text-fill: #ff6b6b; -fx-font-size: 12px;"/>
+
+        <!-- Conteneur pour les boutons -->
+        <HBox alignment="CENTER" spacing="10">
+            <!-- Bouton Valider -->
+            <Button fx:id="validerBtn" text="Valider" 
+                    onAction="#handleValidation"
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 8 20; -fx-min-width: 120; -fx-background-radius: 5;"/>
+
+            <!-- Bouton Retour -->
+            <Button fx:id="retourBtn" text="Retour" 
+                    onAction="#handleRetour"
+                    style="-fx-background-color: #ff6b6b; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 8 20; -fx-min-width: 120; -fx-background-radius: 5;"/>
+        </HBox>
+    </VBox>
+</VBox>

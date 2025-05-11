@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.melocode.avocat.LoginController"
+           style="-fx-background-color: #0A3353; -fx-border-color: #b5914f; -fx-border-width: 6;">
+
+    <!-- Conteneur principal -->
+    <VBox alignment="CENTER" spacing="28" maxWidth="400">
+
+        <!-- Avatar -->
+        <ImageView fitWidth="80" fitHeight="80" preserveRatio="true">
+            <Image url="@images/avatar.png"/>
+        </ImageView>
+        <!-- Titre -->
+        <Label text="CUSTOMER LOGIN" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: white; -fx-padding: 10 0 10 0; -fx-letter-spacing: 2px;"/>
+
+        <!-- Formulaire -->
+        <TextField fx:id="emailField" promptText="Email"
+                   style="-fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #b3c6e0; -fx-padding: 8; -fx-background-color: white; -fx-font-size: 15px; -fx-pref-width: 300;"/>
+        <PasswordField fx:id="passwordField" promptText="Mot de passe"
+                       style="-fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #b3c6e0; -fx-padding: 8; -fx-background-color: white; -fx-font-size: 15px; -fx-pref-width: 300;"/>
+
+        <!-- Boutons -->
+        <HBox alignment="CENTER" spacing="20">
+            <!-- Bouton de connexion -->
+            <Button text="Login"
+                    onAction="#handleLogin"
+                    style="-fx-background-color: #33994d; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 8 32; -fx-font-size: 15px; -fx-cursor: hand; -fx-pref-width: 160;"/>
+            
+            <!-- Bouton de retour -->
+            <Button text="Retour"
+                    onAction="#handleRetour"
+                    style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 8 32; -fx-font-size: 15px; -fx-cursor: hand; -fx-pref-width: 160;"/>
+        </HBox>
+
+        <!-- Message d'erreur -->
+        <Label fx:id="errorLabel"
+               style="-fx-text-fill: #e74c3c; -fx-font-size: 13px;"/>
+    </VBox>
+</StackPane>

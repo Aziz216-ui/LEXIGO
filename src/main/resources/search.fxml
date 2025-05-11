@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane style="-fx-background-color: #f8fafd;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.melocode.avocat.SearchController">
+
+    <!-- Image de fond thème du lois -->
+    <ImageView fitHeight="900" fitWidth="1400" opacity="0.22" preserveRatio="true">
+        <Image url="@../images/law-theme.jpg" />
+    </ImageView>
+
+    <!-- Contenu principal -->
+    <VBox alignment="TOP_CENTER" prefHeight="754.0" prefWidth="1294.0" spacing="25" style="-fx-padding: 40 50 40 50; -fx-background-color: #0A3353;">
+        <Label style="-fx-font-size: 32px;                       -fx-font-weight: 800;                       -fx-text-fill: #2d3a4a;                      -fx-font-family: 'Segoe UI Semibold';                      -fx-effect: dropshadow(gaussian, white, 4, 0.5, 0, 0);" text="Recherche d'avocats" />
+
+        <!-- Formulaire de recherche -->
+        <GridPane hgap="15" style="-fx-background-color: #FFFFFFC9; -fx-background-radius: 15; -fx-padding: 20;" vgap="20">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" prefWidth="180" />
+                <ColumnConstraints prefWidth="250" />
+            </columnConstraints>
+
+            <Label style="-fx-text-fill: #2d3a4a; -fx-font-weight: 600; -fx-font-size: 14px;" text="Spécialité:" />
+            <ComboBox fx:id="specialityComboBox" style="-fx-background-radius: 10;                            -fx-border-radius: 10;                            -fx-border-color: #c2d6ff;                           -fx-font-size: 14px;                           -fx-padding: 10 15;" GridPane.columnIndex="1" />
+
+            <Label style="-fx-text-fill: #2d3a4a; -fx-font-weight: 600; -fx-font-size: 14px;" text="Expérience minimum:" GridPane.rowIndex="1" />
+
+            <Spinner fx:id="experienceSpinner" initialValue="0" max="50" min="0" style="-fx-background-radius: 10;                            -fx-border-radius: 10;                            -fx-border-color: #c2d6ff;                           -fx-padding: 10 15;                           -fx-font-size: 14px;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+
+        <!-- Bouton de recherche -->
+        <Button onAction="#handleSearch" style="-fx-background-color: #4f8cffE6;                       -fx-text-fill: white;                       -fx-font-weight: 700;                       -fx-font-size: 15px;                       -fx-background-radius: 12;                       -fx-padding: 12 40;                       -fx-cursor: hand;                       -fx-effect: dropshadow(gaussian, #00000033, 10, 0, 0, 3);" text="Lancer la recherche" />
+
+        <!-- Tableau élargi -->
+        <TableView fx:id="lawyersTable" prefHeight="500" prefWidth="1000" style="-fx-background-color: #FFFFFFF2;                          -fx-background-radius: 15;                          -fx-border-radius: 15;                          -fx-border-color: #d6e4ff;                         -fx-font-size: 15px;">
+            <columns>
+                <TableColumn fx:id="nameColumn" prefWidth="220" text="Nom" />
+                <TableColumn fx:id="specialityColumn" prefWidth="260" text="Spécialité" />
+                <TableColumn fx:id="experienceColumn" prefWidth="180" text="Expérience" />
+                <TableColumn fx:id="ratingColumn" prefWidth="180" text="Évaluation" />
+            </columns>
+        </TableView>
+
+        <!-- Bouton de réservation -->
+        <Button fx:id="reservationButton" onAction="#handleReservation" style="-fx-background-color: #38b6ffE6;                       -fx-text-fill: white;                       -fx-font-weight: 700;                       -fx-font-size: 15px;                       -fx-background-radius: 12;                       -fx-padding: 12 40;                       -fx-cursor: hand;                       -fx-effect: dropshadow(gaussian, #00000033, 10, 0, 0, 3);" text="Prendre rendez-vous" />
+    </VBox>
+</StackPane>
