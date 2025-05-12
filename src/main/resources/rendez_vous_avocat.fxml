@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.melocode.avocat.RendezVousAvocatController"
+      spacing="10"
+      style="-fx-padding: 20;">
+
+    <Label fx:id="titreLabel"
+           style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+    <TableView fx:id="rendezVousTableView" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn text="ID" fx:id="idColumn"/>
+            <TableColumn text="Nom Client" fx:id="nomClientColumn"/>
+            <TableColumn text="Prénom Client" fx:id="prenomClientColumn"/>
+            <TableColumn text="Âge" fx:id="ageColumn"/>
+            <TableColumn text="Sexe" fx:id="sexeColumn"/>
+            <TableColumn text="Date Naissance" fx:id="dateNaissanceColumn"/>
+            <TableColumn text="Date RDV" fx:id="dateRdvColumn"/>
+            <TableColumn text="Description" fx:id="descriptionColumn"/>
+        </columns>
+    </TableView>
+
+    <HBox alignment="CENTER" spacing="10">
+        <Button text="Retour" onAction="#handleRetour"
+                style="-fx-background-color: #2196F3; -fx-text-fill: white;"/>
+    </HBox>
+</VBox>
